@@ -33,5 +33,11 @@ jobs:
         run: npm ci
       - name: Run linter
         run: npm run lint
+      - name: Infra up
+        run: npm run test_infra:up
+      - name: test Infra
+        run: curl http://localhost:8080/auth/realms/test
       - name: Run tests
         run: npm run test
+      - name: Infra down
+        run: npm run test_infra:down
