@@ -13,7 +13,7 @@ describe(`[POST] /projects`, () => {
     request = supertest(server);
     const token = await getAccessToken('customer', 'pass');
     if (token) access_token = token;
-  }, 20000);
+  }, 1000000);
 
   const mockedProjectData: NewProjectInputDto = {
     name: 'New Project',
