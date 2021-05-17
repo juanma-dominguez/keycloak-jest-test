@@ -34,7 +34,16 @@ jobs:
       - name: Run linter
         run: npm run lint
       - name: Infra up
-        run: npm run test_infra:up
+        run: docker run --rm  \
+   --name keycloak \
+   -e KEYCLOAK_USER=admin \
+   -e KEYCLOAK_PASSWORD=admin \
+   -e KEYCLOAK_IMPORT=/tmp/realm.json  -v /tmp/realm.json:/tmp/realm.json \
+   -p 8180:8180 \
+   -it quay.io/keycloak/keycloak \
+   -b 0.0.0.0 \
+   -Djboss.http.port=8180 \
+   -Dkeycloak.profile.feature.upload_scripts=enabled 
       - name: test Infra
         run: curl http://localhost:8080/auth/realms/test
       - name: Run tests
