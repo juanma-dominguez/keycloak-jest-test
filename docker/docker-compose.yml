@@ -3,7 +3,7 @@ version: '3.4'
 services:
   keycloak:
     #image: wizzn/keycloak:12
-    image: jboss/keycloak:12.0.4
+    image: jboss/keycloak:13.0.0
     container_name: ${CONTAINER_NAME}
     ports:
       - '8080:8080'
