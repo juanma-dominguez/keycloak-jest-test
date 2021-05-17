@@ -19,7 +19,7 @@
     "build:pro": "webpack --config ./webpack/webpack.prod.js",
     "dev_infra:up": "docker-compose -f docker/docker-compose.yml --env-file docker/dev/.docker.env up -d",
     "dev_infra:down": "docker-compose -f docker/docker-compose.yml --env-file docker/dev/.docker.env down -v",
-    "test": "npm run test_infra:up && jest --runInBand --detectOpenHandles && npm run test_infra:down",
+    "test": "npm run test_infra:up && docker ps && jest --runInBand --detectOpenHandles && npm run test_infra:down",
     "test:watch": "npm run test_infra:up && npm run test_mock:data && jest --watch --runInBand --detectOpenHandles --verbose && npm run test_infra:down",
     "test:coverage": "npm run test_infra:up && npm run test_mock:data && jest --runInBand --coverage && npm run test_infra:down",
     "test_infra:up": "docker-compose -f docker/docker-compose.yml --env-file docker/test/.docker.env up -d",
