@@ -34,7 +34,7 @@ jobs:
       - name: Run linter
         run: npm run lint
       - name: Infra up
-        run: docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 -it jboss/keycloak:13.0.0
+        run: docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 jboss/keycloak:13.0.0
       - name: test Infra
         run: curl http://localhost:8080/auth/realms/master
       - name: Run tests
