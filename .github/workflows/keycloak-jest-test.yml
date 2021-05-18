@@ -39,6 +39,6 @@ jobs:
       - name: Sleep for 30 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '10s'
+          time: '30s'
       - name: test Infra
-        run: curl http://localhost:8080/auth/realms/master
+        run: curl http://localhost:8080/auth/realms/test
