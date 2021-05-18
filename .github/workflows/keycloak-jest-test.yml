@@ -37,7 +37,3 @@ jobs:
         run: docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 jboss/keycloak:13.0.0
       - name: test Infra
         run: curl http://localhost:8080/auth/realms/master
-      - name: Run tests
-        run: npm run test
-      - name: Infra down
-        run: npm run test_infra:down
