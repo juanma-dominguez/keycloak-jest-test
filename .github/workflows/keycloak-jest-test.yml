@@ -33,14 +33,13 @@ jobs:
         run: npm ci
       - name: Run linter
         run: npm run lint
-      - name: Infra up
-        #run: docker run --rm --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 -it jboss/keycloak:13.0.0
-        run: docker-compose -f docker/docker-compose.yml --env-file docker/test/.docker.env up -d --build
-      - name: Sleep for 30 seconds
+      - name: Test infra up
+        run: npm run test_infra:up
+      - name: Wait 30 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '30s'
-      - name: test Infra
-        run: curl http://localhost:8080/auth/realms/test
       - name: Run tests
-        run: npm run test
+        run: npm run test:only
+      - name: Test infra down
+        run: npm run test_infra:down
