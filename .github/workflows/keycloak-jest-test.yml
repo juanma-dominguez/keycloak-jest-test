@@ -42,3 +42,5 @@ jobs:
           time: '30s'
       - name: test Infra
         run: curl http://localhost:8080/auth/realms/test
+      - name: Run tests
+        run: npm run test
