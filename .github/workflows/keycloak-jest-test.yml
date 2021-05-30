@@ -11,6 +11,19 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      NODE_ENV: dev
+      SERVER_PORT: 4000
+      LOGGER_LEVEL: off
+      KEYCLOAK_REALM: dev
+      KEYCLOAK_HOST: http://localhost:8080/auth
+      KEYCLOAK_RESOURCE: mlops
+      KEYCLOAK_SECRET: b85859c2-94a1-4630-87b2-82b6527fd3d3
+      API_DATABASE_SERVER: 0.0.0.0
+      API_DATABASE_USERNAME: admin
+      API_DATABASE_PASSWORD: admin
+      API_DATABASE_NAME: api
+      API_DATABASE_MIGRATIONS: true
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js 14.x

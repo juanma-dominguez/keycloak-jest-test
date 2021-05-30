@@ -18,4 +18,4 @@ const config = {
   },
 };
 
-export const logger = configure(config).getLogger();
+export const loggerConf = configure(config).getLogger();

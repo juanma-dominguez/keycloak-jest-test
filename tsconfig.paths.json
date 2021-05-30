@@ -5,9 +5,12 @@
       "@common": ["src/common"],
       "@domainModels": ["src/domain/models"],
       "@domainServices": ["src/domain/services"],
+      "@domainMappers": ["src/domain/mappers"],
       "@errors": ["src/common/errors"],
+      "@db": ["src/infrastructure/orm"],
       "@infrastructure/*": ["src/infrastructure/*"],
       "@logger": ["src/common/logger"],
+      "@manifest": ["manifest.json"],
       "@testingFixtures": ["tests/fixtures"]
     }
   }

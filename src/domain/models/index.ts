@@ -1,1 +1,1 @@
-export * from './project.domain.models';
+export * from './user.domain.models';

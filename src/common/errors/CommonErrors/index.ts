@@ -1,1 +1,1 @@
-export * from './InternalServerError';
+export * from './HttpException';
