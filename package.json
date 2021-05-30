@@ -17,11 +17,11 @@
     "build:dev_server": "webpack --config ./webpack/webpack.dev.js",
     "build:dev": "npm run dev_infra:up && webpack --config ./webpack/webpack.dev.js",
     "build:pro": "webpack --config ./webpack/webpack.prod.js",
-    "dev_infra:up": "docker-compose -f docker/docker-compose.yml --env-file docker/dev/.docker.env up -d",
-    "dev_infra:down": "docker-compose -f docker/docker-compose.yml --env-file docker/dev/.docker.env down -v",
+    "dev_infra:up": "docker-compose -f docker/docker-compose.yml up -d",
+    "dev_infra:down": "docker-compose -f docker/docker-compose.yml down -v",
     "test:only": "jest --runInBand --detectOpenHandles",
-    "test_infra:up": "docker-compose -f docker/docker-compose.yml --env-file docker/test/.docker.env up -d",
-    "test_infra:down": "docker-compose -f docker/docker-compose.yml --env-file docker/test/.docker.env down -v"
+    "test_infra:up": "docker-compose -f docker/docker-compose.yml up -d",
+    "test_infra:down": "docker-compose -f docker/docker-compose.yml down -v"
   },
   "lint-staged": {
     "*.ts": "npm run lint:fix"
